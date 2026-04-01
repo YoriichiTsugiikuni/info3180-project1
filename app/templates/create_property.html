@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="row justify-content-center mt-4">
+    <div class="col-md-6">
+        <h2 class="mb-4">Add New Property</h2>
+        <form method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+
+            <div class="mb-3">
+                {{ form.title.label(class="form-label") }}
+                {{ form.title(class="form-control") }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.description.label(class="form-label") }}
+                {{ form.description(class="form-control") }}
+            </div>
+
+            <div class="row">
+                <div class="col mb-3">
+                    {{ form.bedrooms.label(class="form-label") }}
+                    {{ form.bedrooms(class="form-control") }}
+                </div>
+                <div class="col mb-3">
+                    {{ form.bathrooms.label(class="form-label") }}
+                    {{ form.bathrooms(class="form-control") }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col mb-3">
+                    {{ form.price.label(class="form-label") }}
+                    {{ form.price(class="form-control") }}
+                </div>
+                <div class="col mb-3">
+                    {{ form.property_type.label(class="form-label") }}
+                    {{ form.property_type(class="form-select") }}
+                </div>
+            </div>
+
+            <div class="mb-3">
+                {{ form.location.label(class="form-label") }}
+                {{ form.location(class="form-control") }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.photo.label(class="form-label") }}
+                {{ form.photo(class="form-control") }}
+            </div>
+
+            <button type="submit" class="btn btn-primary">Add Property</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
